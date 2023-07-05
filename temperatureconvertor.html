@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter </title>
+    <link rel="stylesheet" href="tempp.css">  
+<style> 
+        body{
+        background-image:url(https://wallpaperaccess.com/full/3518778.jpg);
+        background-repeat:no-repeat;
+        background-size:cover;
+    
+    }
+        </style>         
+</head>
+
+<body>
+
+<center  bottom=50px>
+<h1> TEMPERATURE CONVERTER</h1>
+<body>
+    <form>
+      <label for="celcius">Celcius:</label>
+      <input type="number" id="celcius" value = "0">
+      <br /><br />
+      <label for="fahr">Fahrenheit:</label>
+      <input type="number" id="fahr" value = "32">
+     <br> <br>
+     <label for="fahr">kelvin:</label>
+      <input type="number" id="kelv" value = "32">
+    </form>
+<script>
+window.onload = function() {
+  let c = document.getElementById("celcius");
+  let f = document.getElementById("fahr");
+  let k = document.getElementById("kelv");
+  c.oninput = function() {
+      f.value = parseFloat(c.value * 9/5) + 32;
+      k.value = parseFloat(c.value) + 273.15;
+  };
+  f.oninput = function() {
+      c.value = parseFloat(f.value - 32) * 5/9;
+     k.value = parseFloat(f.value - 32 )*5/9 + 273.15 ;
+  };
+   k.oninput = function() {
+     c.value = parseFloat(k.value - 273.15);
+     f.value = parseFloat(k.value -273.15) * 9/5 +32;
+};
+};
+</script>
+</body>
+
+</html>
